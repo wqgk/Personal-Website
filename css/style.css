@@ -1,3 +1,7 @@
+/* 通用样式 */
+a {
+    text-decoration: none;
+}
 /* 首页样式 */
 #index {
     margin: 0;
@@ -11,20 +15,36 @@
     background: rgba(0, 0, 0, 0.2);
     padding: 25px;
     text-align: center;
-    margin: auto;
-    margin-top: 5%;
+    margin: 5% auto;
     color: white;
     font-family: "Century Gothic", sans-serif;
+    position: relative;
 }
 
 .box1-img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    transition: all 0.4s linear;
 }
-.box1 a:hover .box1-img {
-    width: 150px;
-    height: 150px;
+
+.tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 2;
+    top: 0;
+    /* left: auto; */
+}
+.box1-img:hover {
+    transform: scale(1.3);
+}
+.box1:hover .tooltiptext {
+    visibility: visible;
 }
 .box1 h1 {
     font-size: 40px;
@@ -50,7 +70,6 @@ ul {
 }
 .box1 li a {
     color: white;
-    text-decoration: none;
     font-size: 60px;
     transition: all ease-in-out 250ms;
 }
@@ -66,17 +85,252 @@ ul {
 }
 
 .box2 {
+    width: 800px;
+    margin: 20px auto;
     text-align: center;
 }
 .box2 h1 {
     color: #ff6633;
-    text-align: center;
+}
+.box2 h2 {
+    color: red;
 }
 .box2 .box2-img {
     width: 640px;
     height: 400px;
 }
 
-.box2 h2 {
-    color: red;
+.box2 .right-bar {
+    width: 60px;
+    height: 240px;
+    position: fixed;
+    top: 300px;
+    right: 0;
+    overflow: hidden;
+    background-color: #b9b9b9;
+}
+.right-bar > div {
+    height: 60px;
+    line-height: 60px;
+}
+.right-bar a {
+    display: block;
+}
+.right-bar span {
+    text-align: center;
+    visibility: hidden;
+    display: inline-block;
+    width: 80px;
+    position: fixed;
+    right: 60px;
+}
+.right-bar i {
+    color: black;
+    font-size: 20px;
+}
+.right-bar .text1 {
+    top: 300px;
+}
+.right-bar .text2 {
+    top: 360px;
+}
+.right-bar .text3 {
+    top: 420px;
+}
+.right-bar .text4 {
+    top: 480px;
+}
+.right-bar > div:hover,
+.right-bar > div:hover span,
+.right-bar > div:hover i {
+    visibility: visible;
+    background-color: #ff6633;
+    color: white;
+}
+/* 照片墙页样式 */
+
+.picturewall {
+    width: 90%;
+    /* height: 700px; */
+    margin: 10px auto;
+}
+.picturewall h2 {
+    text-align: center;
+    color: #ff6633;
+}
+.picturewall .photos {
+    width: 100%;
+    height: 600px;
+    border: 2px solid gray;
+    background: url(../img/scenery-bg.jpg) no-repeat 100%/100%;
+    position: relative;
+    overflow: hidden;
+}
+.picturewall .photos1 {
+    position: absolute;
+    padding: 10px 10px 20px 10px;
+    background: white;
+    transition: all 0.5s;
+    z-index: 1;
+}
+.picturewall .photos1:hover {
+    transform: rotate(0deg) scale(1.5);
+    z-index: 2;
+}
+.photos-text {
+    visibility: hidden;
+    position: absolute;
+    width: 200px;
+    background-color: #ff6633;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 2;
+}
+.photos-text1 {
+    left: 50px;
+    top: 320px;
+}
+.photos-text2 {
+    left: 200px;
+    top: 460px;
+}
+.photos-text3 {
+    left: 400px;
+    top: 320px;
+}
+.photos-text4 {
+    left: 400px;
+    top: 560px;
+}
+.photos-text5 {
+    left: 600px;
+    top: 460px;
+}
+.photos-text6 {
+    left: 800px;
+    top: 360px;
+}
+.photos-text7 {
+    left: 800px;
+    top: 560px;
+}
+.photos-text8 {
+    left: 1000px;
+    top: 340px;
+}
+.photos-text9 {
+    left: 1000px;
+    top: 560px;
+}
+.photos1:hover + .photos-text {
+    visibility: visible;
+}
+.picturewall .pho1 {
+    left: 50px;
+    top: 60px;
+    transform: rotate(25deg);
+}
+.picturewall .pho2 {
+    left: 200px;
+    top: 200px;
+    transform: rotate(-5deg);
+}
+.picturewall .pho3 {
+    left: 400px;
+    top: 60px;
+    transform: rotate(-5deg);
+}
+.picturewall .pho4 {
+    left: 400px;
+    top: 300px;
+    transform: rotate(0deg);
+}
+.picturewall .pho5 {
+    left: 600px;
+    top: 200px;
+    transform: rotate(10deg);
+}
+.picturewall .pho6 {
+    left: 800px;
+    top: 100px;
+    transform: rotate(-5deg);
+}
+.picturewall .pho7 {
+    left: 800px;
+    top: 300px;
+    transform: rotate(-10deg);
+}
+.picturewall .pho8 {
+    left: 1000px;
+    top: 80px;
+    transform: rotate(5deg);
+}
+.picturewall .pho9 {
+    left: 1000px;
+    top: 300px;
+    transform: rotate(15deg);
+}
+
+.picturewall .cat-bg {
+    width: 100%;
+    height: 600px;
+    border: 2px solid gray;
+    background: url(../img/cat-bg.jpg) no-repeat 100%/100%;
+    opacity: 0.7;
+}
+
+.picturewall .pictures {
+    width: 300px;
+    height: 300px;
+    margin: 150px auto;
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite linear;
+}
+
+.picturewall .pictures1 {
+    width: 300px;
+    height: 300px;
+    opacity: 0.9;
+    position: absolute;
+}
+
+.picturewall .pictures-img {
+    width: 300px;
+    height: 300px;
+    vertical-align: top;
+}
+
+.picturewall .pictures-box1 {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.picturewall .pictures-box2 {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.picturewall .pictures-box3 {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.picturewall .pictures-box4 {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.picturewall .pictures-box5 {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.picturewall .pictures-box6 {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+@keyframes rotate {
+    form {
+        transform: rotateX(0) rotateZ(0);
+    }
+
+    to {
+        transform: rotateX(1turn) rotateZ(1turn);
+    }
 }
